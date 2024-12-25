@@ -1,0 +1,34 @@
+<div class="p-d-flex p-jc-center p-ai-center sign-up-container">
+  <div class="sign-up-card p-shadow-6">
+    <h2 class="p-text-center">Sign Up</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
+      <div class="p-field p-fluid">
+        <label for="name">Name</label>
+        <input pInputText id="name" type="text" formControlName="fullName" placeholder="Enter your name" />
+      </div>
+      <div class="p-field p-fluid">
+        <label for="username">Username</label>
+        <input pInputText id="username" type="text"  formControlName="username" placeholder="Enter your username" />
+      </div>
+      <div class="p-field p-fluid">
+        <label for="email">Email</label>
+        <input pInputText id="email" type="email"  formControlName="email" placeholder="Enter your email" />
+      </div>
+      <div class="p-field p-fluid">
+        <label for="password">Password</label>
+        <input pPassword id="password"  formControlName="password" feedback="true" placeholder="Enter your password" />
+      </div>
+      <div class="p-field p-fluid">
+        <label for="confirm-password">Confirm Password</label>
+        <input pPassword id="confirm-password" feedback="false"  formControlName="confirmPassword" placeholder="Confirm your password" />
+      </div>
+      <div *ngIf="registrationForm.hasError('passwordMismatch') && registrationForm.get('confirmPassword')?.touched">
+        Passwords do not match.
+      </div>
+      <div class="p-mt-3">
+        <button pButton type="submit" [disabled]="registrationForm.invalid" label="Sign Up" class="p-button-success p-mr-2" style="width: 100%"></button>
+        <a class="p-link" routerLink="/auth/login">Back to Login</a>
+      </div>
+    </form>
+  </div>
+</div>

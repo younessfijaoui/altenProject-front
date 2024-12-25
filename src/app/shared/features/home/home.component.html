@@ -1,0 +1,21 @@
+<div class="p-grid p-jc-center p-mt-3" class="container">
+  <div class="row">
+    @for (product of products(); track product) {
+    <div class="card" class="m-2" style="width: 20rem">
+      <img
+        class="card-img-top"
+        [src]="
+          product.image ||
+          'https://embed-ssl.wistia.com/deliveries/3507c3f3559ef346b55c0617f05e631f83802dc7.webp?image_crop_resized=1920x1080'
+        "
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    }
+  </div>
+</div>

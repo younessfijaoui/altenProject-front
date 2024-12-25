@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="p-d-flex p-jc-center p-ai-center w-8">
+    <div class="login-card p-shadow-6">
+      <h2 class="p-text-center">Login</h2>
+      <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="p-field p-fluid">
+          <label for="username">Username</label>
+          <input pInputText id="username" formControlName="username" type="text" placeholder="Enter your username" />
+        </div>
+        <div class="p-field p-fluid">
+          <label for="password">Password</label>
+          <input pPassword id="password" formControlName="password" type="password" feedback="false" placeholder="Enter your password" />
+        </div>
+        <div class="button-container">
+          <button pButton type="submit" label="Login" class="p-button-primary" style="width: 100%"></button>
+          <p>You don’t have an account yet ! <a class="p-link p-link" routerLink="/auth/sign-in" style="color: blue">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

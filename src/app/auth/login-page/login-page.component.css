@@ -1,0 +1,15 @@
+
+.login-card {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-container {
+  margin-block: 10px;
+}
